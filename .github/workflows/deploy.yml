@@ -1,4 +1,29 @@
+<<<<<<< HEAD
 git add .github/workflows/deploy.yml
 git commit -m "Add CI/CD deployment to cPanel via FTP"
 git push
 
+=======
+name: Deploy Website to cPanel via FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Upload to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /public_html/ 
+>>>>>>> e7417ebf6e15d14ca1bb389336b9c4b7c654b9d1

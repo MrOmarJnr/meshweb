@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-git add .github/workflows/deploy.yml
-git commit -m "Add CI/CD deployment to cPanel via FTP"
-git push
-
-=======
 name: Deploy Website to cPanel via FTP
 
 on:
@@ -25,5 +19,4 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /public_html/ 
->>>>>>> e7417ebf6e15d14ca1bb389336b9c4b7c654b9d1
+          server-dir: /public_html/
